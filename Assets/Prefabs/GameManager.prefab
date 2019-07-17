@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3653280427492753497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3653280427492753500}
+  - component: {fileID: 3653280427492753503}
+  - component: {fileID: 3653280427492753502}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3653280427492753500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653280427492753497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3653280427492753503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653280427492753497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f876172f3120f074f98b61907fbc94fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 1
+--- !u!114 &3653280427492753502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653280427492753497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee91b9ac1fdec5542afcd36806cd1142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePauseInput:
+    state: 1
+    key: 112
+    detectionType: 0
+  gameUnpauseInput:
+    state: 2
+    key: 27
+    detectionType: 0
+  unitMoveLeftInput:
+    state: 1
+    key: 106
+    detectionType: 1
+  unitMoveRightInput:
+    state: 1
+    key: 108
+    detectionType: 1
+  unitJumpInput:
+    state: 1
+    key: 105
+    detectionType: 0
+  unitMoveLeftAxis:
+    state: 1
+    inputAxis: 0
+    detectionType: 1
+    useRawAxisInput: 0
+  unitMoveRightAxis:
+    state: 1
+    inputAxis: 0
+    detectionType: 0
+    useRawAxisInput: 0
+  unitJumpAxis:
+    state: 1
+    inputAxis: 1
+    detectionType: 0
+    useRawAxisInput: 0
+  unitMoveTouch:
+    state: 1
+    detectionType: 2
+    soloTouchOnly: 1
+  unitJumpTouch:
+    state: 1
+    detectionType: 0
+    soloTouchOnly: 0

@@ -29,7 +29,16 @@ public class InputHandler : MonoBehaviour {
     private List<TouchInput> touchActions = new List<TouchInput>();
 
     #region GameInputs
-
+    [SerializeField] private KeyInput gamePauseInput;
+    [SerializeField] private KeyInput gameUnpauseInput;
+    [SerializeField] private KeyInput unitMoveLeftInput;
+    [SerializeField] private KeyInput unitMoveRightInput;
+    [SerializeField] private KeyInput unitJumpInput;
+    [SerializeField] private AxisInput unitMoveLeftAxis;
+    [SerializeField] private AxisInput unitMoveRightAxis;
+    [SerializeField] private AxisInput unitJumpAxis;
+    [SerializeField] private TouchInput unitMoveTouch;
+    [SerializeField] private TouchInput unitJumpTouch;
     #endregion
 
     #region Properties
@@ -94,7 +103,36 @@ public class InputHandler : MonoBehaviour {
 
     private void HandleInputAction(InputAction action, InputValueData inputData) {
         if (manager.CurrentState == action.State) {
-
+            if (action == gamePauseInput) {
+                new GamePause().Execute();
+            }
+            else if (action == gameUnpauseInput) {
+                new GamePause().Execute();
+            }
+            else if (action == unitMoveLeftInput) {
+                new UnitMove(manager.PlayerUnit, Vector3.left).Execute();
+            }
+            else if (action == unitMoveRightInput) {
+                new UnitMove(manager.PlayerUnit, Vector3.right).Execute();
+            }
+            else if (action == unitJumpInput) {
+                new UnitJump(manager.PlayerUnit).Execute();
+            }
+            else if (action == unitMoveLeftAxis) {
+                new UnitMoveAxis(manager.PlayerUnit, Vector3.left, inputData.axisValue).Execute();
+            }
+            else if (action == unitMoveRightAxis) {
+                new UnitMoveAxis(manager.PlayerUnit, Vector3.right, inputData.axisValue).Execute();
+            }
+            else if (action == unitJumpAxis) {
+                new UnitJump(manager.PlayerUnit).Execute();
+            }
+            else if (action == unitMoveTouch) {
+                new UnitMoveTouch(manager.PlayerUnit, inputData.touchValue).Execute();
+            }
+            else if (action == unitJumpTouch) {
+                new UnitJumpTouch(manager.PlayerUnit, inputData.touchValue).Execute();
+            }
         }
     }
 
